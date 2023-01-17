@@ -1,0 +1,227 @@
+<section class="apps-hero w-full h-full">
+  <div class="container w-[1100px] max-w-[100%] mx-auto mt-6 relative p-0">
+    <img src="./assets/logo-pokemon.png" alt="" class="w-96 mx-auto py-3" />
+
+    <div class="flex mx-auto justify-center items-center gap-x-6">
+      <!-- lado izquierdo -->
+      <div class="bg-red-600 w-[30%] flex flex-col rounded-l-3xl shadow-xl">
+        <div class="flex p-4 gap-x-4 bg-red-800 rounded-tl-3xl" id="top-border">
+          <div
+            class="rounded-full bg-cyan-400 w-10 p-4 border-4 border-white"
+          ></div>
+          <div
+            class="rounded-full bg-red-600 w-4 h-2 p-2 border border-black"
+          ></div>
+          <div
+            class="rounded-full bg-yellow-300 w-4 h-2 p-2 border border-black"
+          ></div>
+          <div
+            class="rounded-full bg-green-400 w-4 h-2 p-2 border border-black"
+          ></div>
+        </div>
+        <div class="px-4 pt-4" id="tv-border">
+          <div
+            class="px-4 border border-black rounded-bl-3xl rounded-xl bg-slate-400/90"
+          >
+            <div class="flex justify-center py-2 gap-x-4 items-center">
+              <div
+                class="rounded-full bg-red-600 w-1 p-1 border border-black"
+              ></div>
+              <div
+                class="rounded-full bg-black w-1 p-1 border border-black"
+              ></div>
+            </div>
+            <div
+              class="border-2 border-black rounded-xl text-center justify-center flex flex-col mx-auto bg-white"
+            >
+              <img [src]="" [alt]="" class="w-44 h-48 mx-auto py-2" />
+              <span class="text-black text-left px-2 font-bold"></span>
+            </div>
+            <div class="flex py-2 justify-around items-center">
+              <div
+                class="rounded-full bg-red-700 p-3 border border-black"
+              ></div>
+              <i class="fa-solid fa-bars text-white text-[25px]"></i>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex rounded-bl-3xl border-b-2 border-black px-4 gap-x-4 justify-between items-center"
+        >
+          <div class="flex border-black p-4 gap-x-4">
+            <div
+              class="rounded-full bg-cyan-600 w-6 p-4 border border-black"
+            ></div>
+            <div
+              class="rounded-3xl bg-green-600 h-3 w-12 border border-black"
+            ></div>
+            <div
+              class="rounded-full bg-yellow-600 w-12 h-3 border border-black"
+            ></div>
+          </div>
+          <img src="./assets/cruz.png" alt="" class="w-10 h-10" />
+        </div>
+      </div>
+      <!-- centro -->
+      <div
+        class="bg-red-700 w-[36%] flex flex-col rotate-90 absolute drop-shadow-xl z-10 mr-[25px]"
+      >
+        <div class="px-4 py-1 border-y-2 border-red-900">
+          <div class="border-x-8 border-red-900 py-3 drop-shadow-xl"></div>
+        </div>
+      </div>
+      <!-- lado derecho -->
+      <div
+        class="bg-red-600 w-[32%] mt-[25px] flex flex-col h-[35%] rounded-br-3xl"
+        id="estrella5"
+      >
+        <div class="px-2 pt-12">
+          <form
+            class="p-2 border-2 py-4 border-black rounded-xl bg-green-500 flex justify-between text-[11px] cursor-text gap-x-2"
+            [formGroup]="formulario"
+            *ngIf="formulario.value"
+          >
+            <div class="flex flex-col drop-shadow-lg">
+              <p class="font-bold underline">Básicos</p>
+
+              <div class="flex flex-col">
+                <strong>Name:</strong>
+                <input
+                  type="text"
+                  class="focus:outline-none"
+                  formControlName="nombre"
+                  [class.invalido]="
+                    controlNombre.touched && controlNombre.hasError('required')
+                  "
+                />
+                <small
+                  class="p-0 alert-danger"
+                  *ngIf="
+                    controlNombre.touched && controlNombre.hasError('required')
+                  "
+                >
+                  Name required
+                </small>
+              </div>
+              <div class="flex flex-col">
+                <strong>Type:</strong>
+                <input
+                  type="text"
+                  class="focus:outline-none"
+                  formControlName="type"
+                  [class.invalido]="
+                    controlType.touched && controlType.hasError('required')
+                  "
+                />
+                <small
+                  class="p-0 alert-danger"
+                  *ngIf="
+                    controlType.touched && controlType.hasError('required')
+                  "
+                >
+                  Type required
+                </small>
+              </div>
+              <div class="flex flex-col">
+                <strong>Height:</strong>
+                <input
+                  type="text"
+                  class="focus:outline-none"
+                  formControlName="height"
+                  [class.invalido]="
+                    controlHeight.touched && controlHeight.hasError('required')
+                  "
+                />
+                <small
+                  class="p-0 alert-danger"
+                  *ngIf="
+                    controlHeight.touched && controlHeight.hasError('required')
+                  "
+                >
+                  Height required
+                </small>
+              </div>
+            </div>
+            <div class="">
+              <p class="font-bold underline">Habilidades</p>
+
+              <div class="flex flex-col">
+                <strong>Ability:</strong>
+                <input
+                  type="text"
+                  class="focus:outline-none"
+                  formControlName="ability"
+                  [class.invalido]="
+                    controlAbility.touched &&
+                    controlAbility.hasError('required')
+                  "
+                />
+                <small
+                  class="p-0 alert-danger"
+                  *ngIf="
+                    controlAbility.touched &&
+                    controlAbility.hasError('required')
+                  "
+                >
+                  Ability required
+                </small>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="px-4 py-5 items-center mx-auto gap-y-2 flex flex-col">
+          <div class="flex gap-x-4 items-center mx-auto text-white">
+            <button
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black flex text-center items-center justify-center mx-auto"
+            ></button>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+          </div>
+          <div class="flex gap-x-4 items-center mx-auto">
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+            <div
+              class="p-3 w-3 h-3 bg-blue-700 rounded-md shadow-lg border border-black"
+            ></div>
+          </div>
+        </div>
+        <div
+          class="flex border-b-2 border-black p-4 gap-x-4 justify-between rounded-br-3xl"
+        >
+          <button
+            class="bg-yellow-500 hover:bg-yellow-600 w-40 h-10 rounded-xl border border-black font-bold"
+            routerLink=""
+          >
+            <i class="fa-solid fa-arrow-left mr-2"></i>Volver
+          </button>
+          <button
+            class="bg-yellow-500 hover:bg-yellow-600 w-40 h-10 rounded-xl border border-black font-bold"
+            (click)="guardar()"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

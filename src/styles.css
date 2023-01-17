@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bellefair&family=Caveat&family=Cormorant+Garamond:wght@300&family=Courgette&family=Dancing+Script&family=Heebo&family=Indie+Flower&family=Marck+Script&family=Montserrat:wght@100&family=Nunito+Sans:wght@200&family=Poppins:wght@100&family=Roboto:wght@300;400;500;700;900&family=Shadows+Into+Light&family=Smooch&family=Whisper&display=swap");
+
+:root {
+  --primary-dark: #5651e5;
+  --primary-light: #709dff;
+  --primary-bg: rgba(0, 0, 43, 0.77);
+}
+
+.alert-danger {
+  color: red;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------- */
+
+@layer base {
+  body {
+    @apply bg-[#1d222d];
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl font-bold;
+  }
+}

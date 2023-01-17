@@ -1,0 +1,63 @@
+<section class="apps-hero w-full h-full">
+  <div class="flex float-right items-center p-8 gap-x-2 z-10">
+    <button
+      class="flex items-center gap-x-2 px-4 py-2 border rounded-xl hover:cursor-pointer z-10 hover:bg-white text-white hover:text-black"
+      routerLink="/login"
+    >
+      <i class="fa-solid fa-right-to-bracket"></i>
+      <h3 class="text-right">Iniciar sesion</h3>
+    </button>
+  </div>
+  <div class="container w-[1100px] max-w-[100%] mx-auto mt-6 relative p-0">
+    <img
+      src="./assets/logo-pokemon.png"
+      alt=""
+      class="w-96 mx-auto py-3 z-10"
+      routerLink=""
+    />
+
+    <div class="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2">
+      <div
+        class="flex flex-col bg-slate-300/10 hover:bg-slate-400/40 rounded-xl m-3 p-3 cursor-pointer"
+        *ngFor="
+          let pokemon of pokemons
+            | paginate
+              : {
+                  itemsPerPage: 10,
+                  currentPage: page,
+                  totalItems: totalPokemons
+                }
+        "
+        [ngSwitch]="pokemon"
+      >
+        <div class="flex items-center gap-x-3 bg-green-300 px-2 rounded-xl">
+          <img src="./assets/pokeball.png" alt="" class="w-6 h-6" />
+          <p class="py-1 font-bold">No.{{ pokemon.id }}</p>
+        </div>
+        <div
+          class="flex flex-col text-left justify-center gap-y-2 mx-auto"
+          [routerLink]="['/pokemon', pokemon.name]"
+        >
+          <img
+            [src]="pokemon.sprites.other.dream_world.front_default"
+            alt="pokemon"
+            class="rounded-xl mx-auto w-40 h-28 py-3"
+          />
+          <div class="flex flex-col">
+            <div class="flex justify-between">
+              <h3 class="text-[16px] text-white">{{ pokemon.name }}</h3>
+            </div>
+            <div class="text-[12px] flex flex-col text-gray-400/80">
+              <span>Type: {{ pokemon.types[0].type.name }}</span>
+              <span>Height: {{ pokemon.height }}</span>
+              <span>Health: {{ pokemon.stats[0].base_stat }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<pagination-controls
+  (pageChange)="page = $event; pokemons = []; getPokemons()"
+></pagination-controls>

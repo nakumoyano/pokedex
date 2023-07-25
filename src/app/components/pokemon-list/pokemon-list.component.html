@@ -75,6 +75,7 @@
   </div>
 </section>
 <pagination-controls
+  *ngIf="pokemons.length !== 0"
   (pageChange)="page = $event; pokemons = []; getPokemons()"
   class="custom-pagination"
 ></pagination-controls>

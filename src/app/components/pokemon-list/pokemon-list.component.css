@@ -5,3 +5,17 @@ pagination-controls {
   justify-content: center;
   color: #fff;
 }
+
+/* Estilos personalizados para los botones de paginación */
+.custom-pagination ::ng-deep .ngx-pagination li a {
+  /* Estilos para los botones de paginación */
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/*  */

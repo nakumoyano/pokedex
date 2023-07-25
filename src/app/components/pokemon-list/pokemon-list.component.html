@@ -1,5 +1,5 @@
 <section class="apps-hero w-full h-full">
-  <div class="flex float-right items-center p-8 gap-x-2 z-10">
+  <!-- <div class="flex float-right items-center p-8 gap-x-2 z-10">
     <button
       class="flex items-center gap-x-2 px-4 py-2 border rounded-xl hover:cursor-pointer z-10 hover:bg-white text-white hover:text-black"
       routerLink="/login"
@@ -7,7 +7,7 @@
       <i class="fa-solid fa-right-to-bracket"></i>
       <h3 class="text-right">Iniciar sesion</h3>
     </button>
-  </div>
+  </div> -->
   <div class="container w-[1100px] max-w-[100%] mx-auto mt-6 relative p-0">
     <img
       src="./assets/logo-pokemon.png"
@@ -48,7 +48,13 @@
               <h3 class="text-[16px] text-white">{{ pokemon.name }}</h3>
             </div>
             <div class="text-[12px] flex flex-col text-gray-400/80">
-              <span>Type: {{ pokemon.types[0].type.name }}</span>
+              <span
+                >Type:
+                <strong
+                  [style.color]="pokemon.types[0].type.name | colorType"
+                  >{{ pokemon.types[0].type.name }}</strong
+                ></span
+              >
               <span>Height: {{ pokemon.height }}</span>
               <span>Health: {{ pokemon.stats[0].base_stat }}</span>
             </div>
@@ -60,4 +66,5 @@
 </section>
 <pagination-controls
   (pageChange)="page = $event; pokemons = []; getPokemons()"
+  class="custom-pagination"
 ></pagination-controls>

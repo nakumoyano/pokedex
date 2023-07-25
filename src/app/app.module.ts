@@ -11,6 +11,7 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
 import { FiltroPokemonPipe } from './pipes/filtro-pokemon.pipe';
 import { PokemonAltaComponent } from './components/pokemon-alta/pokemon-alta.component';
 import { LoginComponent } from './components/login/login.component';
+import { ColorTypePipe } from './pipes/color-type.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
     FiltroPokemonPipe,
     PokemonAltaComponent,
     LoginComponent,
+    ColorTypePipe,
   ],
   imports: [
     BrowserModule,

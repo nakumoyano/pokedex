@@ -1,6 +1,6 @@
 # Pokedex
 
-Pokedex creada usando Angular 14, consumiendo la Api de pokémon (https://pokeapi.co/). También use SweetAlert para las alertas y ReactiveFormsModule para la creación del formulario y sus respectivas validaciones. Tambien utilice Tailwind css para los estilos y maquetado de la pokedex.
+Pokedex creada usando Angular 14, consumiendo la Api de pokémon (https://pokeapi.co/). También use SweetAlert para las alertas y ReactiveFormsModule para la creación del formulario y sus respectivas validaciones. Utilice Tailwind css para los estilos y maquetado de la pokedex, y un pipe para que segun el tipo de pokemon, este cambie de color
 
 ## Demo
 

@@ -61,6 +61,17 @@
         </div>
       </div>
     </div>
+    <div
+      class="flex flex-col justify-center text-center mx-auto text-white items-center py-6"
+      *ngIf="pokemons.length == 0"
+    >
+      <h2 class="w-full">No se encontro este pokémon</h2>
+      <img
+        src="https://files.cults3d.com/uploaders/22818739/illustration-file/7329fed5-e604-40e5-aa53-fe8f77665bb6/Pokeball.png"
+        alt=""
+        class="h-40 remove-bg"
+      />
+    </div>
   </div>
 </section>
 <pagination-controls

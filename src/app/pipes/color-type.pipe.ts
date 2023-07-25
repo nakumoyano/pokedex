@@ -33,6 +33,14 @@ export class ColorTypePipe implements PipeTransform {
       return '#9EB6B7';
     } else if (name == 'dragon') {
       return '#F16E57';
+    } else if (name == 'ground') {
+      return '#A38C21';
+    } else if (name == 'fairy') {
+      return '#F9DAD9';
+    } else if (name == 'fighting') {
+      return '#D56723';
+    } else if (name == 'dark') {
+      return '#707070';
     } else {
       return '';
     }

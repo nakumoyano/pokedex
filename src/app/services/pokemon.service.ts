@@ -11,10 +11,19 @@ export class PokemonService {
   private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100';
   constructor(private http: HttpClient) {}
 
-  getPokemons(limit: number, offset: number) {
-    return this.http.get(
-      `https://pokeapi.co/api/v2/pokemon?limit=${20}&offset=${offset}`
-    );
+  // getPokemons(limit: number, offset: number) {
+  //   return this.http.get(
+  //     `https://pokeapi.co/api/v2/pokemon?limit=${20}&offset=${offset}`
+  //   );
+  // }
+  getPokemons(limit: number, offset: number, searchTerm?: string) {
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+
+    if (searchTerm && searchTerm.trim() !== '') {
+      url = `https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`;
+    }
+
+    return this.http.get(url);
   }
 
   getMoreData(name: string) {
